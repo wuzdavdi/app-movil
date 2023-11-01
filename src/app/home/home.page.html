@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="ion-toolbar">
+    <ion-title class="titulo">
+      Game Zone
+    </ion-title>
+  </ion-toolbar>
+  <ion-content [fullscreen]="true"
+    style="--background: url(https://i.gifer.com/N62x.gif) no-repeat center center fixed; background-size: cover;">
+    <ion-card>
+      <ion-card-header>
+
+
+        <ion-card-title class="title">Log In!</ion-card-title>
+
+      </ion-card-header>
+      <ion-card-content>
+        <ion-avatar id="myAvatar">
+          <img src="../../assets/img/img1.gif">
+        </ion-avatar>
+        <strong>
+          <h1 id="nombre">Toy Game</h1>
+        </strong>
+
+        <form>
+          <ion-item class="field">
+            <ion-icon class="input-icon" name="mail" slot="start"></ion-icon>
+            <ion-input autocomplete="off" id="logemail" placeholder="Email" class="input-field" name="logemail"
+              type="email"></ion-input>
+          </ion-item>
+          <ion-item class="field">
+            <ion-icon class="input-icon" name="lock-closed" slot="start"></ion-icon>
+            <ion-input autocomplete="off" id="logpass,myinput" [(ngModel)]="myNombre" placeholder="Password"
+              class="input-field" name="logpass" type="password"></ion-input>
+          </ion-item>
+          <a href="https://web.facebook.com"><ion-icon class="tamaño" name="logo-facebook"></ion-icon></a>
+          <a href="https://mail.google.com"><ion-icon class="tamaño" name="logo-google"></ion-icon></a>
+          <a href="https://twitter.com"><ion-icon class="tamaño" name="logo-twitter"></ion-icon></a>
+          <ion-button class="btn" expand="full" (click)="enviar()">Enviar</ion-button>
+
+
+        </form>
+        <a href="#" class="btn">Forgot your password?</a>
+      </ion-card-content>
+
+    </ion-card>

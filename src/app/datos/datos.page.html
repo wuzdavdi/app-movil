@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  
+
+
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="insert()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+
+  <ion-card *ngFor="let myDatos of datos; let i = index">
+    <ion-card-content>
+      <ion-accordion-group>
+        <ion-accordion value="first">
+          <ion-item slot="header">
+            <ion-label>{{myDatos.datNombre}}
+              <ion-icon color="danger" (click)="removeDatos(myDatos.datId)" slot="end"
+                  name="trash-outline"></ion-icon>
+                <ion-icon color="primary" (click)="updateDatos(myDatos)" slot="end" name="create-outline"></ion-icon>
+            </ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <div>
+              <img src="{{myDatos.datImagen}}" alt="">
+              <h3>Lanzamiemnto :</h3>
+              {{myDatos.datLanzamiento}}
+              <h3>Genero </h3>
+                <strong>{{myDatos.datGenero}}</strong>
+                <h3>description</h3>
+                <strong>{{myDatos.datDescripcion}}</strong>
+               
+                
+              
+            </div>
+
+          </div>
+
+          <ng-template #menor>
+            <h1><strong>No se puede mostrar información (menor de edad)</strong></h1>
+          </ng-template>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-card-content>
+  </ion-card>
+  <ion-button routerLink="/futbol">Ir a Otra Página</ion-button>
+</ion-content>
